@@ -16,7 +16,6 @@ public class LoginFacebookSteps {
 
     @Steps
     EndUserSteps steps;
-    Logger logger = Logger.getLogger(LoginFacebookSteps.class.getName());
 
     @Given("open login page and see input form for email and password")
     public void openLoginPageAndSeeInputFormForEmailAndPassword() {
