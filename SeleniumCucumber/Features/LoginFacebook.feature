@@ -1,5 +1,5 @@
 @LoginFeature
-Feature: Create Data for Typicode
+Feature: Login Facebook
 
   #-------------------------- Positive Testcase --------------------------
   Scenario: As User I want to login to Facebook successfully (camel case email)

@@ -1,0 +1,2 @@
+@RegisterFeature
+Feature: Register Facebook
