@@ -23,12 +23,12 @@ public class LoginFacebookSteps {
         steps.openFacebookPage();
     }
 
-    @When("put email address '(.*)'on email input form")
-    public void putEmailAddressOnEmailInputForm(String userEmail) {
+    @When("put \"([^\"]*)\" address \"([^\"]*)\" on email input form")
+    public void putEmailAddressOnEmailInputForm(String ability, String userEmail) {
         steps.inputEmailAddress(userEmail);
     }
 
-    @And("put password '(.*)' on password input form")
+    @And("put password \"([^\"]*)\" on password input form")
     public void putPasswordOnPasswordInputForm(String userPassword) {
         steps.inputPassword(userPassword);
     }
@@ -40,5 +40,16 @@ public class LoginFacebookSteps {
 
     @And("successfully login to facebook")
     public void successfullyLoginToFacebook() {
+        steps.isFacebookLoginVisible();
+    }
+
+    @And("fail login to facebook")
+    public void failLoginToFacebook() {
+        steps.isWrongCredentialVisible();
+    }
+
+    @And("user can see locked account warning on facebook login page")
+    public void userCanSeeLockedAccountWarningOnFacebookLoginPage() {
+        steps.isLockedBoxVisible();
     }
 }

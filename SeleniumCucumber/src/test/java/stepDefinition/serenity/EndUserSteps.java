@@ -3,6 +3,9 @@ package stepDefinition.serenity;
 import pages.FacebookPage;
 import net.thucydides.core.annotations.Step;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+
 public class EndUserSteps {
 
     FacebookPage facebookPage;
@@ -25,5 +28,23 @@ public class EndUserSteps {
     @Step
     public void clickButtonForLoginFacebook() {
         facebookPage.clickButtonLoginFacebook();
+    }
+
+    @Step
+    public void isFacebookLoginVisible() {
+        assertThat("facebook icon is not visible",
+                facebookPage.isFacebookIconVisible(), equalTo(true));
+    }
+
+    @Step
+    public void isWrongCredentialVisible() {
+        assertThat("wrong credential box is not visible",
+                facebookPage.isWrongCredentialBoxVisible(), equalTo(true));
+    }
+
+    @Step
+    public void isLockedBoxVisible() {
+        assertThat("locked box is not visible",
+                facebookPage.isLockedBoxVisible(), equalTo(true));
     }
 }

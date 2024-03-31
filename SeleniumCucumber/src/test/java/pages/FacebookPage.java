@@ -18,6 +18,16 @@ public class FacebookPage extends PageObject {
     @FindBy(name="login")
     private WebElementFacade btnLogin;
 
+    @FindBy(xpath="//body/div[@id='u_0_0_p8']/div[@id='globalContainer']/div[@id='content']/div[1]/div[1]/img[1]")
+    private WebElementFacade facebookIcon;
+
+    @FindBy(id = "error_box")
+    private WebElementFacade wrongCredentBox;
+
+    @FindBy(id = "locked_box")
+    private WebElementFacade lockedBox;
+
+
     public void typeEmailAddressOnEmailForm(String email) {
         userEmail.type(email);
     }
@@ -28,5 +38,17 @@ public class FacebookPage extends PageObject {
 
     public void clickButtonLoginFacebook() {
         btnLogin.click();
+    }
+
+    public Boolean isFacebookIconVisible() {
+        return facebookIcon.isVisible();
+    }
+
+    public Boolean isWrongCredentialBoxVisible() {
+        return wrongCredentBox.isVisible();
+    }
+
+    public Boolean isLockedBoxVisible() {
+        return lockedBox.isVisible();
     }
 }
