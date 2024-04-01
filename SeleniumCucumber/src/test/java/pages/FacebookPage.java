@@ -152,4 +152,17 @@ public class FacebookPage extends PageObject {
     public Boolean isRegistrationFailBoxVisible() {
         return registrationFailBox.isVisible();
     }
+
+    public Boolean isEmailFormVisibleClickableEnable() {
+        return userEmail.isVisible() && userEmail.isClickable() && userEmail.isEnabled();
+    }
+
+    public Boolean isPasswordFormVisibleClickableEnable() {
+        return userPassword.isVisible() && userPassword.isClickable() && userPassword.isEnabled();
+    }
+
+    public Boolean isButtonLoginVisibleClickableEnable() {
+        return btnLogin.isVisible() && btnLogin.isClickable() && btnLogin.isEnabled();
+    }
+
 }

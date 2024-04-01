@@ -114,4 +114,22 @@ public class EndUserSteps {
         assertThat("registration fail is not visible ",
                 facebookPage.isRegistrationFailBoxVisible(), equalTo(true));
     }
+
+    @Step
+    public void isEmailFormVisibleClickableEnable() {
+        assertThat("email form is different with expcted",
+                facebookPage.isEmailFormVisibleClickableEnable(), equalTo(true));
+    }
+
+    @Step
+    public void isPasswordFormVisibleClickableEnable() {
+        assertThat("password form is different with expcted",
+                facebookPage.isPasswordFormVisibleClickableEnable(), equalTo(true));
+    }
+
+    @Step
+    public void isButtonLoginVisibleClickableEnable() {
+        assertThat("login button is different with expcted",
+                facebookPage.isButtonLoginVisibleClickableEnable(), equalTo(true));
+    }
 }

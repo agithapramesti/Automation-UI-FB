@@ -51,4 +51,19 @@ public class LoginFacebookSteps {
     public void userCanSeeLockedAccountWarningOnFacebookLoginPage() {
         steps.isLockedBoxVisible();
     }
+
+    @And("user can see email input form are visible, clickable, and enable")
+    public void userCanSeeEmailInputFormAreVisibleClickableAndEnable() {
+        steps.isEmailFormVisibleClickableEnable();
+    }
+
+    @And("user can see password input form are visible, clickable, and enable")
+    public void userCanSeePasswordInputFormAreVisibleClickableAndEnable() {
+        steps.isPasswordFormVisibleClickableEnable();
+    }
+
+    @And("user can see buton login are visible, clickable, and enable")
+    public void userCanSeeButonLoginAreVisibleClickableAndEnable() {
+        steps.isButtonLoginVisibleClickableEnable();
+    }
 }

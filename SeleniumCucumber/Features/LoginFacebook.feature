@@ -4,6 +4,9 @@ Feature: Login Facebook
   #-------------------------- Positive Testcase --------------------------
   Scenario: As User I want to login to Facebook successfully (camel case email)
     Given open login page and see input form for email and password
+    And user can see email input form are visible, clickable, and enable
+    And user can see password input form are visible, clickable, and enable
+    And user can see buton login are visible, clickable, and enable
     When put "email" address "Test@gmail.com" on email input form
     And put password "Test1234" on password input form
     Then click button login
@@ -48,6 +51,13 @@ Feature: Login Facebook
     Given open login page and see input form for email and password
     When put "email" address "" on email input form
     And put password "Test1234" on password input form
+    Then click button login
+    And fail login to facebook
+
+  Scenario: As User I fail login to Facebook when put empty password & email address
+    Given open login page and see input form for email and password
+    When put "email" address "" on email input form
+    And put password "" on password input form
     Then click button login
     And fail login to facebook
 
@@ -98,6 +108,24 @@ Feature: Login Facebook
     | Test 1234      |
     | test1234       |
     | TEST1234       |
+
+  Scenario Outline: As User I fail login to Facebook when put empty password with not incase sensitive
+    Given open login page and see input form for email and password
+    When put "email" address "Test@gmail.com" on email input form
+    And put password "<password>" on password input form
+    Then click button login
+    And fail login to facebook
+    Examples:
+    | password |
+    | TEST1234 |
+    | test1234 |
+
+  Scenario : As User I fail login to Facebook when put admin
+    Given open login page and see input form for email and password
+    When put "email" address "admin" on email input form
+    And put password "admin" on password input form
+    Then click button login
+    And fail login to facebook
 
   Scenario: As User I fail login to Facebook when put empty password
     Given open login page and see input form for email and password
