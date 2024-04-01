@@ -47,4 +47,71 @@ public class EndUserSteps {
         assertThat("locked box is not visible",
                 facebookPage.isLockedBoxVisible(), equalTo(true));
     }
+
+    @Step
+    public void inputFirstName(String firstName) {
+        facebookPage.typeFistName(firstName);
+    }
+
+    @Step
+    public void inputSurName(String surname) {
+        facebookPage.typeSurname(surname);
+    }
+
+    @Step
+    public void selectDateOfBirth(String date) {
+        facebookPage.selectDateOfBirth(date);
+    }
+
+    @Step
+    public void selectMonthOfBirth(String month) {
+        facebookPage.selectMonthOfBirth(month);
+    }
+
+    @Step
+    public void selectYearOfBirth(String year) {
+        facebookPage.selectYearOfBirth(year);
+    }
+
+    @Step
+    public void selectGenderByGenderOption(String genderOption) {
+        facebookPage.selectGenderByGenderOption(genderOption);
+    }
+
+    @Step
+    public void clickButtonSignUp() {
+        facebookPage.clickButtonSignUp();
+    }
+
+    @Step
+    public void isNextStepAfterRegisPageVisible() {
+        assertThat("registration is fail",
+                facebookPage.isNextStepAfterRegisPageVisible(), equalTo(true));
+    }
+
+    @Step
+    public void inputMobilePhoneOrEmail(String data) {
+        facebookPage.inputMobilePhoneOrEmail(data);
+    }
+
+    @Step
+    public void selectPreferredPronoun(String pronoun) {
+        facebookPage.selectPreferredPronoun(pronoun);
+    }
+
+    @Step
+    public void inputCustomGenderOptional(String gender) {
+        facebookPage.inputCustomGenderOptional(gender);
+    }
+
+    @Step
+    public void inputPasswordUser(String password) {
+        facebookPage.inputPassword(password);
+    }
+
+    @Step
+    public void isRegistrationFailBoxVisible() {
+        assertThat("registration fail is not visible ",
+                facebookPage.isRegistrationFailBoxVisible(), equalTo(true));
+    }
 }
